@@ -1,0 +1,49 @@
+
+@media only screen and (max-width: 775px){
+    .inputBox { 
+        background-color: rgba(173, 173, 173, 0.383);
+        padding: 0.30rem;
+        padding-left: 1em;
+        width: 250px;
+        color: white!important;
+        border-radius: 5px;   
+    }
+
+}
+
+    .inputBox { 
+    margin: 1em auto 1em 30%;
+    position: inherit;
+    background-color: rgba(173, 173, 173, 0.383);
+    padding: 0.30rem;
+    padding-left: 1em;
+    width: 500px;
+    color: white!important;
+    border-radius: 5px;   
+}
+
+.buttonStyle { 
+    margin: 1% 1% 0% auto!important;
+    
+    background: rgb(255, 134, 53)!important;
+}
+
+.title { 
+    /* display: flex!important;
+    flex-direction: column!important; */
+    margin: 0% 0% 0% 42.5%!important;
+    letter-spacing: 0.55rem!important;
+    font-size: 35px;
+    font-weight: 600!important;
+}
+
+.homeIcon { 
+    margin: 0.50em 0.25em -3% 0.25em!important;
+    font-size: 50px!important;
+}
+
+.copyWright { 
+    margin-bottom: -1.75%!important;
+    font-size: 18px!important;
+    
+}

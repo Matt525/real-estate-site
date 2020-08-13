@@ -1,0 +1,20 @@
+
+.animateFavorite { 
+    color: red;
+    animation: scaleUpDown 1s ease-in-out;
+    animation-duration: 1s;
+}
+
+@keyframes scaleUpDown { 
+    0% { 
+        -webkit-transform: scale(1);
+    }
+    50% { 
+        -webkit-transform: scale(2);
+    }
+    100% { 
+        -webkit-transform: scale(1);
+        color: red;
+    }
+}
+
