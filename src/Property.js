@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Card from '@material-ui/core/Card';
@@ -10,7 +10,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {info} from './data';
 import './Property.css';
-
 
 const cardStyles = makeStyles(theme=>({
     
@@ -36,17 +35,16 @@ const cardStyles = makeStyles(theme=>({
 
 }))
 
-// Assigning id of data to 'item'
-const item = info.id;
 
+export default function Property(props){
 
-export default function Property(){
-    
     let [activeFavorite, setFavorite] = useState(-1);
-
+    let [favoriteArray, setArray] = useState([]);
+    // console.log(props.housingData);
 const classes = cardStyles();    
+
     const propertyInfo = info.map((info,item)=>(
-        <Card className={classes.root} keyProp={item}>
+        <Card className={classes.root}>
             <CardActionArea>
                     <CardMedia
                     component="img"
@@ -60,26 +58,31 @@ const classes = cardStyles();
                                         {info.address}
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
-                                    <h1>{info.price}<strong>/Month</strong></h1> {info.rooms} || {info.sqft}
+                                    <h1>{info.price}<strong>/Month</strong></h1> {info.rooms} || {info.sqft} <strong>sqft</strong>
                                     </Typography>
                             </CardContent>
             </CardActionArea>
 
                 <CardActions>
-                <FavoriteIcon onClick={()=> setFavorite(activeFavorite = item)} className={`${item == activeFavorite ? "animateFavorite" : ""}`} style={{cursor: 'pointer'}}/>
+                
+                <FavoriteIcon id="icon" onClick={() =>{
+                            setFavorite(activeFavorite = item);
+                            setArray(favoriteArray => [...favoriteArray, activeFavorite])
+                            console.log(favoriteArray);
+                            }
+                                    } 
+                                    
+                className={`${activeFavorite === item ? "animateFavorite" : ""}`} style={{cursor: 'pointer'}}
+                
+                />
                     <ul><li style={{color: 'purple'}}>House For Rent</li></ul>
 
                             <Button variant="outlined" size="small" color="primary" className={classes.button}>
                                     Learn More
                             </Button>
-                </CardActions>
+            </CardActions>
         </Card>
-    
-     
     ))
-
-
-
 
 return(
     <div>

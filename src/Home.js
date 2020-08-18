@@ -1,36 +1,49 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './Home.css';
 import Property from './Property';
-import { makeStyles } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
+import $ from 'jquery'; 
 
-const gridStyles = makeStyles(theme=>({
-    root: { 
-        flexGrow: 1
-    },
-    control: {
-        padding: theme.spacing(2),
-      },
-      paper : { 
-            padding: theme.spacing(2),          
-      }
-}))
+export default class Home extends React.Component {
 
+    constructor(props){
+        super(props);
 
-export default function Home() {
-    const [spacing, setSpacing] = React.useState(2);
-    const classes = gridStyles();
-  
-    const handleChange = (event) => {
-      setSpacing(Number(event.target.value));
-    };
-        return (
-            <div class="container">
+        this.state = { 
+            housingData: "",
+        }
+        
+
+    }
+
+    componentDidMount() { 
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://realtor.p.rapidapi.com/properties/v2/list-for-rent?sort=relevance&city=New%20York%20City&state_code=NY&limit=200&offset=0",
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "realtor.p.rapidapi.com",
+                "x-rapidapi-key": "f76ca2b1c4msh33c4abca334d588p16879ajsn952b22a139fd"
+            }
+        }
+        
+        $.ajax(settings).done(response => {
+            for(let i = 0; i < response.properties.length; i++){
+                let data = response.properties[i];
+                this.setState({housingData: data})
+            } 
+        });        
+    }
+
+    render() {
+        return ( 
+            <div className="container">
                 <Grid container>
-                    
-                        <Property />
-                    
+                        <Property housingData={this.state.housingData} />
                 </Grid>
             </div>
         )
+}
+
 }

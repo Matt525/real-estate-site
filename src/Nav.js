@@ -3,15 +3,15 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import './NavStyles.css';
-import {Button, ButtonGroup, Table} from '@material-ui/core';
+import {Button, ButtonGroup} from '@material-ui/core';
 import HouseRoundedIcon from '@material-ui/icons/HouseRounded';
 import CopyrightRoundedIcon from '@material-ui/icons/CopyrightRounded';
 
 const navStyles = makeStyles(theme=> ({
+
   root: { 
     flexGrow: 1,
     width: '100vw',
@@ -20,6 +20,9 @@ const navStyles = makeStyles(theme=> ({
     top: '0',
     zIndex: 1000
   },
+  appBarSettings : { 
+      backgroundColor: '#fff!important',
+  },  
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -33,9 +36,7 @@ const navStyles = makeStyles(theme=> ({
   inputRoot: {
     color: '#fff',
   },
-  buttonBar : { 
-    backgroundColor: '#fff'
-  },
+
   login: {
     display: 'flex',
   }
@@ -46,7 +47,7 @@ export default function NavbarMenu() {
   return (
     <div className={classes.root}>
       
-    <AppBar position="static" >
+    <AppBar position="static" color="white"  >
     <Toolbar>
         <IconButton
           edge="start"
@@ -67,8 +68,8 @@ export default function NavbarMenu() {
         </Toolbar>
 
         
-        <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group" className={classes.buttonBar}>
-          <label className={classes.buttonBar}>Bedrooms </label>     
+        <ButtonGroup variant="contained" color="white" aria-label="contained primary button group">
+          <h5 className="label">Bedrooms</h5>
                     <Button>One</Button>
                     <Button>Two</Button>
                     <Button>Three</Button>

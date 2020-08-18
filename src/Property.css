@@ -1,7 +1,7 @@
 
 .animateFavorite { 
-    color: red;
-    animation: scaleUpDown 1s ease-in-out;
+    color: red!important;
+    animation: scaleUpDown 1s ease-in;
     animation-duration: 1s;
 }
 
@@ -14,7 +14,7 @@
     }
     100% { 
         -webkit-transform: scale(1);
-        color: red;
+        color: red!important;
     }
 }
 

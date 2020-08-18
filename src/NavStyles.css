@@ -23,15 +23,16 @@
 }
 
 .buttonStyle { 
-    margin: 1% 1% 0% auto!important;
-    
-    background: rgb(255, 134, 53)!important;
+    margin: 1% 1% 1em auto!important;
+    color: #fff!important;
+    background: rgb(61, 61, 241)!important;
+    width: 100px;
 }
 
 .title { 
     /* display: flex!important;
     flex-direction: column!important; */
-    margin: 0% 0% 0% 42.5%!important;
+    margin: 0% 0% 1em 42.5%!important;
     letter-spacing: 0.55rem!important;
     font-size: 35px;
     font-weight: 600!important;
@@ -46,4 +47,8 @@
     margin-bottom: -1.75%!important;
     font-size: 18px!important;
     
+}
+
+.label { 
+    margin: 1em!important;
 }
