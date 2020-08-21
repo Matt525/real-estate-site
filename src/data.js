@@ -48,6 +48,80 @@ export const info = [
         sqft: "1050",
         rooms: '4BR 3Bath',
         img: 'https://photos.zillowstatic.com/cc_ft_1536/ISl6ngs2cc1mwm0000000000.jpg'
+    },
+    {
+        id: 7,
+        price: '$1350',
+        address: '1390 Brown Pelican Drive Myrtle Beach, SC 29577',
+        sqft: "1050",
+        rooms: '4BR 3Bath',
+        img: 'https://photos.zillowstatic.com/cc_ft_1536/ISl6ngs2cc1mwm0000000000.jpg'
+    },
+    {
+        id: 8,
+        price: '$1350',
+        address: '1390 Brown Pelican Drive Myrtle Beach, SC 29577',
+        sqft: "1050",
+        rooms: '4BR 3Bath',
+        img: 'https://photos.zillowstatic.com/cc_ft_1536/ISl6ngs2cc1mwm0000000000.jpg'
+    },
+    {
+        id: 9,
+        price: '$1350',
+        address: '1390 Brown Pelican Drive Myrtle Beach, SC 29577',
+        sqft: "1050",
+        rooms: '4BR 3Bath',
+        img: 'https://photos.zillowstatic.com/cc_ft_1536/ISl6ngs2cc1mwm0000000000.jpg'
+    },
+    {
+        id: 10,
+        price: '$1350',
+        address: '1390 Brown Pelican Drive Myrtle Beach, SC 29577',
+        sqft: "1050",
+        rooms: '4BR 3Bath',
+        img: 'https://photos.zillowstatic.com/cc_ft_1536/ISl6ngs2cc1mwm0000000000.jpg'
+    },
+    {
+        id: 11,
+        price: '$1350',
+        address: '1390 Brown Pelican Drive Myrtle Beach, SC 29577',
+        sqft: "1050",
+        rooms: '4BR 3Bath',
+        img: 'https://photos.zillowstatic.com/cc_ft_1536/ISl6ngs2cc1mwm0000000000.jpg'
+    },
+    {
+        id: 12,
+        price: '$1350',
+        address: '1390 Brown Pelican Drive Myrtle Beach, SC 29577',
+        sqft: "1050",
+        rooms: '4BR 3Bath',
+        img: 'https://photos.zillowstatic.com/cc_ft_1536/ISl6ngs2cc1mwm0000000000.jpg'
+    },
+    {
+        id: 13,
+        price: '$1350',
+        address: '1390 Brown Pelican Drive Myrtle Beach, SC 29577',
+        sqft: "1050",
+        rooms: '4BR 3Bath',
+        img: 'https://photos.zillowstatic.com/cc_ft_1536/ISl6ngs2cc1mwm0000000000.jpg'
+    },
+    
+    {
+        id: 14,
+        price: '$1350',
+        address: '1390 Brown Pelican Drive Myrtle Beach, SC 29577',
+        sqft: "1050",
+        rooms: '4BR 3Bath',
+        img: 'https://photos.zillowstatic.com/cc_ft_1536/ISl6ngs2cc1mwm0000000000.jpg'
+    },
+    
+    {
+        id: 15,
+        price: '$1350',
+        address: '1390 Brown Pelican Drive Myrtle Beach, SC 29577',
+        sqft: "1050",
+        rooms: '4BR 3Bath',
+        img: 'https://photos.zillowstatic.com/cc_ft_1536/ISl6ngs2cc1mwm0000000000.jpg'
     }
     
                     ]

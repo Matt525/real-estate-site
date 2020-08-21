@@ -44,9 +44,10 @@ export default function Property(props){
 
     let [activeFavorite, setFavorite] = useState(-1);
     let [favoriteArray, setArray] = useState([]);
-    let [showItems, updateItems] = useState(3);
-    let [houses, setHouseData] = useState([])
+    let [showItems, updateItems] = useState(6);
     const classes = cardStyles();    
+
+    
 
 //*************************************************************************
 
@@ -54,39 +55,28 @@ export default function Property(props){
 
     let handleShowItems =()=>{
 
-    updateItems(showItems >= info.length ? showItems : showItems + 3)
+    updateItems(showItems >= info.length ? showItems : showItems + 6)
         
     }
 
     /// MAP OUT INFO ID ARRAY
     // props.length.slice(0,showItems).map(info=>{console.log(<div>{props.housingData.address}</div>)})
-    
-    
-    // ********* YOU JUST MOVED THIS LOOP TO THIS COMPONENT TO ITERATE TO AN ARRAY SO YOU CAN ACCESS LENGTH**********
-                // Iterate through property API to pull all items and assign to state
-                for(let i = 0; i < housingData.length; i++){
-                    let data = housingData[i];
-                    setHouseData(houses = data);
-                } 
-    
-
+    let propData = props.housingData; 
 //*************************************************************************
 
-    
-
-    const propertyInfo = info.slice(0,showItems).map((info,item)=>(
+    const propertyInfo = propData.slice(0,showItems).map((info,item)=>(
         <Card className={classes.root}>
             <CardActionArea>
                     <CardMedia
                     component="img"
                     alt="Contemplative Reptile"
                     height="140"
-                    image={info.img}
+                    image={propData[item].imageLink}
                     title="Contemplative Reptile"
                     />
                             <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
-                                        {info.address}
+                                        {propData[item].streetAddress}
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
                                     <h1>{info.price}<strong>/Month</strong></h1> {info.rooms} || {info.sqft} <strong>sqft</strong>
