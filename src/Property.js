@@ -15,7 +15,7 @@ const cardStyles = makeStyles(theme=>({
     
     root: { 
         padding: theme.spacing(1),
-        [theme.breakpoints.up('lg')]: {
+        [theme.breakpoints.up('m')]: {
             maxWidth: 'auto',
             minWidth: 575,
             minHeight: 400,
@@ -36,14 +36,45 @@ const cardStyles = makeStyles(theme=>({
 }))
 
 
+
+
+
+
 export default function Property(props){
 
     let [activeFavorite, setFavorite] = useState(-1);
     let [favoriteArray, setArray] = useState([]);
-    // console.log(props.housingData);
-const classes = cardStyles();    
+    let [showItems, updateItems] = useState(3);
+    let [houses, setHouseData] = useState([])
+    const classes = cardStyles();    
 
-    const propertyInfo = info.map((info,item)=>(
+//*************************************************************************
+
+    // /// CONSOLE TEST RUN 
+
+    let handleShowItems =()=>{
+
+    updateItems(showItems >= info.length ? showItems : showItems + 3)
+        
+    }
+
+    /// MAP OUT INFO ID ARRAY
+    // props.length.slice(0,showItems).map(info=>{console.log(<div>{props.housingData.address}</div>)})
+    
+    
+    // ********* YOU JUST MOVED THIS LOOP TO THIS COMPONENT TO ITERATE TO AN ARRAY SO YOU CAN ACCESS LENGTH**********
+                // Iterate through property API to pull all items and assign to state
+                for(let i = 0; i < housingData.length; i++){
+                    let data = housingData[i];
+                    setHouseData(houses = data);
+                } 
+    
+
+//*************************************************************************
+
+    
+
+    const propertyInfo = info.slice(0,showItems).map((info,item)=>(
         <Card className={classes.root}>
             <CardActionArea>
                     <CardMedia
@@ -68,7 +99,6 @@ const classes = cardStyles();
                 <FavoriteIcon id="icon" onClick={() =>{
                             setFavorite(activeFavorite = item);
                             setArray(favoriteArray => [...favoriteArray, activeFavorite])
-                            console.log(favoriteArray);
                             }
                                     } 
                                     
@@ -77,7 +107,7 @@ const classes = cardStyles();
                 />
                     <ul><li style={{color: 'purple'}}>House For Rent</li></ul>
 
-                            <Button variant="outlined" size="small" color="primary" className={classes.button}>
+                            <Button onClick={handleShowItems} variant="outlined" size="small" color="primary" className={classes.button}>
                                     Learn More
                             </Button>
             </CardActions>
@@ -85,8 +115,10 @@ const classes = cardStyles();
     ))
 
 return(
+    
     <div>
     {propertyInfo}
+    <Button onClick={handleShowItems} variant="outlined" size="small" color="primary" className={classes.button}>Show More</Button>
     </div>
 )
 
