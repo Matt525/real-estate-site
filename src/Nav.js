@@ -16,7 +16,7 @@ const navStyles = makeStyles(theme=> ({
     flexGrow: 1,
     width: '100vw',
     backgroundColor: 'linear-gradient(to right, rgba(2,0,36,1) 0%, rgba(9,121,116,0.9136029411764706) 0%, rgba(0,212,255,1) 0%, rgba(0,164,255,1) 58%',
-    position: 'sticky',
+    position: 'fixed',
     top: '0',
     zIndex: 1000
   },

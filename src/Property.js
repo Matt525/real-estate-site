@@ -15,14 +15,22 @@ const cardStyles = makeStyles(theme=>({
     
     root: { 
         padding: theme.spacing(1),
-        [theme.breakpoints.up('m')]: {
-            maxWidth: 'auto',
-            minWidth: 575,
+        [theme.breakpoints.up('lg')]: {
+            maxWidth: 475,
+            minWidth: 450,
             minHeight: 400,
             float: 'right',
-            margin: '1em',
-            overflow: 'hidden'
-        }
+            margin: '2em',
+            overflow: 'hidden',
+        },
+    [theme.breakpoints.down('md')]: { 
+        maxWidth: 475,
+        minWidth: 550,
+        minHeight: 400,
+        float: 'right',
+        margin: '2em',
+        overflow: 'hidden',
+    },  
         
     },
     button : { 
@@ -47,8 +55,6 @@ export default function Property(props){
     let [showItems, updateItems] = useState(6);
     const classes = cardStyles();    
 
-    
-
 //*************************************************************************
 
     // /// CONSOLE TEST RUN 
@@ -60,29 +66,31 @@ export default function Property(props){
     }
 
     /// MAP OUT INFO ID ARRAY
-    // props.length.slice(0,showItems).map(info=>{console.log(<div>{props.housingData.address}</div>)})
     let propData = props.housingData; 
 //*************************************************************************
 
-    const propertyInfo = propData.slice(0,showItems).map((info,item)=>(
+    const propertyInfo = info.slice(0,showItems).map((info,item)=>(
         <Card className={classes.root}>
             <CardActionArea>
                     <CardMedia
                     component="img"
                     alt="Contemplative Reptile"
                     height="140"
-                    image={propData[item].imageLink}
+                    // image={propData[item].tvCollectionImageLink}
+                    image={info.img}
                     title="Contemplative Reptile"
                     />
                             <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
-                                        {propData[item].streetAddress}
+                                        {/* {propData[item].streetAddress} */}
+                                        {info.address}
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
                                     <h1>{info.price}<strong>/Month</strong></h1> {info.rooms} || {info.sqft} <strong>sqft</strong>
                                     </Typography>
                             </CardContent>
             </CardActionArea>
+
 
                 <CardActions>
                 
