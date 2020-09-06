@@ -10,6 +10,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {info} from './data';
 import './Property.css';
+import $ from 'jquery';
+
 
 const cardStyles = makeStyles(theme=>({
     
@@ -65,6 +67,7 @@ export default function Property(props){
         
     }
 
+    
     /// MAP OUT INFO ID ARRAY
     let propData = props.housingData; 
 //*************************************************************************
@@ -93,6 +96,12 @@ export default function Property(props){
 
 
                 <CardActions>
+
+                    {/* If(favoriteArray.includes(item) || activeFavorite === item){
+                        document.getElementById('icon').classList.toggle('animateFavorite')
+                    } else{ 
+                        document.getElementById('icon').classList.toggle('');
+                    }*/}
                 
                 <FavoriteIcon id="icon" onClick={() =>{
                             setFavorite(activeFavorite = item);
@@ -100,7 +109,7 @@ export default function Property(props){
                             }
                                     } 
                                     
-                className={`${activeFavorite === item ? "animateFavorite" : ""}`} style={{cursor: 'pointer'}}
+                className={`${favoriteArray.includes(item) || activeFavorite === item ? "animateFavorite" : ""}`} style={{cursor: 'pointer'}}
                 
                 />
                     <ul><li style={{color: 'purple'}}>House For Rent</li></ul>

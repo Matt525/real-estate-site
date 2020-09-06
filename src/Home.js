@@ -2,7 +2,7 @@ import React from 'react'
 import './Home.css';
 import Property from './Property';
 import Grid from '@material-ui/core/Grid';
-import $, { data } from 'jquery';
+import $, { data, isPlainObject } from 'jquery';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 
