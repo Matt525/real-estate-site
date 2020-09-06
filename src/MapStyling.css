@@ -1,0 +1,17 @@
+.mapStyles { 
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: auto;
+    z-index: -1!important;
+}
+
+@media only screen and (max-width: 758px){
+    .mapStyles { 
+        display: none!important;
+    }
+}
+
+
+
+
