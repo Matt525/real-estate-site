@@ -73,8 +73,12 @@ export default function Property(props){
 //*************************************************************************
 
     const propertyInfo = info.slice(0,showItems).map((info,item)=>(
-        <Card className={classes.root}>
+        <Card className={classes.root} onClick={()=>{
+            // Set map long & lat state
+        }}>
+            
             <CardActionArea>
+            
                     <CardMedia
                     component="img"
                     alt="Contemplative Reptile"
