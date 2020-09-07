@@ -1,4 +1,7 @@
 
+html body { 
+    font-family: 'Cinzel', serif!important;
+}
 @media only screen and (max-width: 775px){
     .inputBox { 
         background-color: rgba(173, 173, 173, 0.383);

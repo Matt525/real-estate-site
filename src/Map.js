@@ -25,16 +25,32 @@ import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
         const mapRef = useRef(); 
 
-        // const getUserLocation = () =>{
+        const getUserLocation = () =>{
             
-        //     navigator.geolocation.getCurrentPosition(loc=>{
-        //         setViewport({
-        //             longitude: loc.coords.latitude,
-        //             latitude: loc.coords.latitude
-        //         })
-        //     })
-        // }
+            navigator.geolocation.getCurrentPosition(loc=>{
+                const newViewport = {
+                    latitude: loc.coords.latitude,
+                    longitude: loc.coords.longitude,
+                    zoom: 8,
+                    bearing: 0,
+                    pitch: 0,
+                    top: 0,
+                    width: '80vw',
+                    height: '100vh'
+                }
+                setViewport(newViewport)
+            })
         
+        }
+        
+
+   useEffect(()=>{
+       getUserLocation();
+       console.log(viewport);
+   })
+
+
+
 
         // // this.setState({prevState=>{
         // //     let viewport = {...prevState.viewport};
@@ -61,7 +77,6 @@ import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
         return (
             <div className="mapStyles">
                 <ReactMapGL
-           
                 ref={mapRef}
                 {...viewport} 
                 mapStyle="mapbox://styles/mapbox/dark-v9"
@@ -69,11 +84,18 @@ import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
                 onViewportChange={handleViewportChange}
                 >
               <Geocoder
+                    id="geolocateStyles"
                     mapRef={mapRef} 
                     onViewportChange={handleViewportChange}
                     mapboxApiAccessToken="pk.eyJ1IjoibWF0dDUyNSIsImEiOiJja2RxOW4wMXAwbnpxMnpwNmprdXRuaXJlIn0.LfijiNZJZmZeRL7LSREYvg"
                     position="bottom-left"
                     
+            />
+            <GeolocateControl 
+            
+                positionOptions={{enableHighAccuracy: true}}
+                trackUserLocation={true}
+                onViewportChange={handleViewportChange}
             />
                 </ReactMapGL>
             </div>

@@ -59,7 +59,7 @@ export default function NavbarMenu() {
         </IconButton>
             <Typography className="title" variant="h5">
             
-              Capstone<HouseRoundedIcon className="homeIcon" />Realty<CopyrightRoundedIcon className="copyWright" />
+              Home<HouseRoundedIcon className="homeIcon" /> Away<CopyrightRoundedIcon className="copyWright" />
             </Typography>
       
         
