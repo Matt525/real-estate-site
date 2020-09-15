@@ -39,6 +39,7 @@ import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
                     height: '100vh'
                 }
                 setViewport(newViewport)
+                console.log(viewport.latitude, viewport.longitude);
             })
         
         }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Card from '@material-ui/core/Card';
@@ -10,7 +10,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {info} from './data';
 import './Property.css';
-import $ from 'jquery';
 
 
 const cardStyles = makeStyles(theme=>({
@@ -36,7 +35,7 @@ const cardStyles = makeStyles(theme=>({
         
     },
     button : { 
-        marginLeft: 'auto!important'
+        marginLeft: 'auto!important',
     },
     favorite : { 
         cursor: 'pointer'
@@ -44,8 +43,6 @@ const cardStyles = makeStyles(theme=>({
     
 
 }))
-
-
 
 
 
@@ -63,18 +60,26 @@ export default function Property(props){
 
     let handleShowItems =()=>{
 
-    updateItems(showItems >= info.length ? showItems : showItems + 6)
+    updateItems(showItems >= props.housingData.length ? showItems : showItems + 6)
         
     }
+    
+
 
     
-    /// MAP OUT INFO ID ARRAY
+    /// ASSIGN PROPS DATA TO VARIABLE 
     let propData = props.housingData; 
+    
+    
+
+    
 //*************************************************************************
 
-    const propertyInfo = info.slice(0,showItems).map((info,item)=>(
+            // Card info with data from props array //
+    
+    const propertyInfo = propData.slice(0,showItems).map((propData,item)=>(
         <Card className={classes.root} onClick={()=>{
-            // Set map long & lat state
+            // Set map coordinates to location of clicked card
         }}>
             
             <CardActionArea>
@@ -83,17 +88,18 @@ export default function Property(props){
                     component="img"
                     alt="Contemplative Reptile"
                     height="140"
-                    // image={propData[item].tvCollectionImageLink}
-                    image={info.img}
+                    image={propData.photos[item].href}
+                    // image={info.img}
                     title="Contemplative Reptile"
                     />
                             <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
-                                        {/* {propData[item].streetAddress} */}
-                                        {info.address}
+                                        <p>{propData.address.line}</p>
+                                        {/* {info.address} */}
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
-                                    <h1>{info.price}<strong>/Month</strong></h1> {info.rooms} || {info.sqft} <strong>sqft</strong>
+                                    <h1>{propData.community.price_max}<strong>/Month</strong></h1> {propData.community.beds_max} || {propData.community.sqft_max} <strong>sqft</strong>
+                                    {/* <h1>{info.price}<strong>/Month</strong></h1> {info.rooms} || {info.sqft} <strong>sqft</strong> */}
                                     </Typography>
                             </CardContent>
             </CardActionArea>
@@ -107,16 +113,20 @@ export default function Property(props){
                         document.getElementById('icon').classList.toggle('');
                     }*/}
                 
+
+
+                    {/* Favorite icon pushed to favoriteArray as state */}
+
                 <FavoriteIcon id="icon" onClick={() =>{
                             setFavorite(activeFavorite = item);
                             setArray(favoriteArray => [...favoriteArray, activeFavorite])
                             }
                                     } 
-                                    
+                                    // Conditional rendering for className using the turnary operator. 
                 className={`${favoriteArray.includes(item) || activeFavorite === item ? "animateFavorite" : ""}`} style={{cursor: 'pointer'}}
                 
                 />
-                    <ul><li style={{color: 'purple'}}>House For Rent</li></ul>
+                    <ul><li style={{color: 'purple'}}>Home For Rent</li></ul>
 
                             <Button onClick={handleShowItems} variant="outlined" size="small" color="primary" className={classes.button}>
                                     Learn More
@@ -124,6 +134,11 @@ export default function Property(props){
             </CardActions>
         </Card>
     ))
+
+
+
+
+                                    /// Rendering Card Component 
 
 return(
     
