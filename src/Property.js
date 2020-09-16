@@ -60,7 +60,7 @@ export default function Property(props){
 
     let handleShowItems =()=>{
 
-    updateItems(showItems >= props.housingData.length ? showItems : showItems + 6)
+    updateItems(showItems >= propData.length ? showItems : showItems + 6)
         
     }
     
@@ -68,9 +68,9 @@ export default function Property(props){
 
     
     /// ASSIGN PROPS DATA TO VARIABLE 
-    let propData = props.housingData; 
-    
-    
+            let propData = props.housingData; 
+            console.log(propData.photos);
+            
 
     
 //*************************************************************************
@@ -78,61 +78,58 @@ export default function Property(props){
             // Card info with data from props array //
     
     const propertyInfo = propData.slice(0,showItems).map((propData,item)=>(
-        <Card className={classes.root} onClick={()=>{
-            // Set map coordinates to location of clicked card
-        }}>
-            
-            <CardActionArea>
-            
-                    <CardMedia
-                    component="img"
-                    alt="Contemplative Reptile"
-                    height="140"
-                    image={propData.photos[item].href}
-                    // image={info.img}
-                    title="Contemplative Reptile"
-                    />
-                            <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        <p>{propData.address.line}</p>
-                                        {/* {info.address} */}
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                    <h1>{propData.community.price_max}<strong>/Month</strong></h1> {propData.community.beds_max} || {propData.community.sqft_max} <strong>sqft</strong>
-                                    {/* <h1>{info.price}<strong>/Month</strong></h1> {info.rooms} || {info.sqft} <strong>sqft</strong> */}
-                                    </Typography>
-                            </CardContent>
-            </CardActionArea>
+
+                        <Card className={classes.root} onClick={()=>{
+                        // Set map coordinates to location of clicked card
+                    }}>
+                        
+                        <CardActionArea>
+                                <CardMedia
+                                            component="img"
+                                            alt="Contemplative Reptile"
+                                            height="140"
+                                            image={propData.photos[item].href}
+                                            title="Contemplative Reptile"
+                                />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component="h2">
+                                                    <p>{propData.address.line}</p>
+                                            </Typography>
+                                            <Typography variant="body2" color="textSecondary" component="p">
+                                                    <h1>${propData.community.price_max}<strong>/Month</strong></h1> {propData.community.beds_max}<strong>BR</strong> || {propData.community.sqft_max} <strong>sqft</strong>
+                                            </Typography>
+                                        </CardContent>
+                        </CardActionArea>
 
 
-                <CardActions>
+                                        <CardActions>
 
-                    {/* If(favoriteArray.includes(item) || activeFavorite === item){
-                        document.getElementById('icon').classList.toggle('animateFavorite')
-                    } else{ 
-                        document.getElementById('icon').classList.toggle('');
-                    }*/}
-                
+                                                            {/* If(favoriteArray.includes(item) || activeFavorite === item){
+                                                                document.getElementById('icon').classList.toggle('animateFavorite')
+                                                            } else{ 
+                                                                document.getElementById('icon').classList.toggle('');
+                                                            }*/}
+                                                        
 
 
-                    {/* Favorite icon pushed to favoriteArray as state */}
+                                                            {/* Favorite icon pushed to favoriteArray as state */}
 
-                <FavoriteIcon id="icon" onClick={() =>{
-                            setFavorite(activeFavorite = item);
-                            setArray(favoriteArray => [...favoriteArray, activeFavorite])
-                            }
-                                    } 
-                                    // Conditional rendering for className using the turnary operator. 
-                className={`${favoriteArray.includes(item) || activeFavorite === item ? "animateFavorite" : ""}`} style={{cursor: 'pointer'}}
-                
-                />
-                    <ul><li style={{color: 'purple'}}>Home For Rent</li></ul>
+                                        <FavoriteIcon id="icon" onClick={() =>{
+                                                            setFavorite(activeFavorite = item);
+                                                            setArray(favoriteArray => [...favoriteArray, activeFavorite])
+                                                    }
+                                                            } 
+                                                            // Conditional rendering for className using the turnary operator. 
+                                                            className={`${favoriteArray.includes(item) || activeFavorite === item ? "animateFavorite" : ""}`} style={{cursor: 'pointer'}}
+                                        
+                                        />
+                                                            <ul><li style={{color: 'purple'}}>{propData.prop_status.toUpperCase()}</li></ul>
 
-                            <Button onClick={handleShowItems} variant="outlined" size="small" color="primary" className={classes.button}>
-                                    Learn More
-                            </Button>
-            </CardActions>
-        </Card>
+                                                            <Button onClick={handleShowItems} variant="outlined" size="small" color="primary" className={classes.button}>
+                                                                    Learn More
+                                                            </Button>
+                                        </CardActions>
+                    </Card>
     ))
 
 
@@ -140,12 +137,11 @@ export default function Property(props){
 
                                     /// Rendering Card Component 
 
-return(
-    
-    <div>
-    {propertyInfo}
-    <Button onClick={handleShowItems} variant="outlined" size="small" color="primary" className={classes.button}>Show More</Button>
-    </div>
-)
+                    return(
+                        <div>
+                            {propertyInfo}
+                            <Button onClick={handleShowItems} variant="outlined" size="small" color="primary" className={classes.button}>Show More</Button>
+                        </div>
+                        )
 
-}
+                    }
