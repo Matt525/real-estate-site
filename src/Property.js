@@ -79,7 +79,7 @@ export default function Property(props){
     
     const propertyInfo = propData.slice(0,showItems).map((propData,item)=>(
 
-                        <Card className={classes.root} onClick={()=>{
+                        <Card className={classes.root} key={item} onClick={()=>{
                         // Set map coordinates to location of clicked card
                     }}>
                         
