@@ -51,19 +51,6 @@ import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
    })
 
 
-
-
-        // // this.setState({prevState=>{
-        // //     let viewport = {...prevState.viewport};
-        // //     viewport.longitude = loc.coords.longitude;
-        // //     viewport.latitude = loc.coords.latitude;
-        // //     return { viewport };
-        // // }
-    
-        // useEffect(()=>{
-        //     getUserLocation();
-        // },[])
-     
             
             
 

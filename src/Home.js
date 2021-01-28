@@ -48,6 +48,7 @@ export default class Home extends React.Component {
 
 // response.properties
     render() {
+        
         // Assigned housing data state to variable for readability.
         let dataLoaded = this.state.housingData;
         
