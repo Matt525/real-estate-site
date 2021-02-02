@@ -2,9 +2,9 @@ import React from 'react'
 import './Home.css';
 import Property from './Property';
 import Grid from '@material-ui/core/Grid';
-import $, { data } from 'jquery';
+import $ from 'jquery';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { ExpansionPanelActions } from '@material-ui/core';
+
 
 
 export default class Home extends React.Component {
@@ -25,11 +25,12 @@ export default class Home extends React.Component {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://realtor.p.rapidapi.com/properties/v2/list-for-rent?sort=relevance&city=New%20York%20City&state_code=NY&limit=200&offset=0",
+            "url": "https://realtor.p.rapidapi.com/properties/v2/list-for-rent?city=New%20York%20City&state_code=NY&limit=200&offset=0&sort=relevance",
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "realtor.p.rapidapi.com",
-                "x-rapidapi-key": "873b045cacmshaa6122090c3fb86p126873jsn7297028c0bb4"
+                "x-rapidapi-key": "f76ca2b1c4msh33c4abca334d588p16879ajsn952b22a139fd",
+                "useQueryString": true
             }
         }
         
@@ -42,7 +43,7 @@ export default class Home extends React.Component {
             }
             this.setState({housingData: dataArray});
         });
-        
+
             }
         
 
@@ -51,8 +52,7 @@ export default class Home extends React.Component {
         
         // Assigned housing data state to variable for readability.
         let dataLoaded = this.state.housingData;
-        
-        
+    
         return ( 
             <div className="container">
                 
