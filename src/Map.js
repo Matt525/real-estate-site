@@ -5,9 +5,6 @@ import "./MapStyling.css";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
-
-
-
  export default function Map(){
 
         const [viewport, setViewport] = useState({ 
@@ -71,20 +68,20 @@ import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
                 mapboxApiAccessToken="pk.eyJ1IjoibWF0dDUyNSIsImEiOiJja2RxOW4wMXAwbnpxMnpwNmprdXRuaXJlIn0.LfijiNZJZmZeRL7LSREYvg"
                 onViewportChange={handleViewportChange}
                 >
-              <Geocoder
-                    id="geolocateStyles"
-                    mapRef={mapRef} 
-                    onViewportChange={handleViewportChange}
-                    mapboxApiAccessToken="pk.eyJ1IjoibWF0dDUyNSIsImEiOiJja2RxOW4wMXAwbnpxMnpwNmprdXRuaXJlIn0.LfijiNZJZmZeRL7LSREYvg"
-                    position="bottom-left"
-                    
-            />
-            <GeolocateControl 
-            
-                positionOptions={{enableHighAccuracy: true}}
-                trackUserLocation={true}
-                onViewportChange={handleViewportChange}
-            />
+                                <Geocoder
+                                        id="geolocateStyles"
+                                        mapRef={mapRef} 
+                                        onViewportChange={handleViewportChange}
+                                        mapboxApiAccessToken="pk.eyJ1IjoibWF0dDUyNSIsImEiOiJja2RxOW4wMXAwbnpxMnpwNmprdXRuaXJlIn0.LfijiNZJZmZeRL7LSREYvg"
+                                        position="bottom-left"
+                                        
+                                />
+                                <GeolocateControl 
+                                
+                                    positionOptions={{enableHighAccuracy: true}}
+                                    trackUserLocation={true}
+                                    onViewportChange={handleViewportChange}
+                                />
                 </ReactMapGL>
             </div>
         )

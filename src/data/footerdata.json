@@ -1,0 +1,85 @@
+{
+  "footerlogo": "assets/img/footer-logo.png",
+  "footertext": "Our support team will get assistance from AI-powered, making it quicker than ever to handle support requests.",
+  "footerbg": "assets/img/bg/footer.png",
+  "socialicon": [
+      {
+        "icon": "fa fa-facebook",
+        "url": "https://www.matt-staton.com"
+      },
+      {
+        "icon": "fa fa-twitter",
+        "url": "https://www.matt-staton.com"
+      },
+      {
+        "icon": "fa fa-linkedin",
+        "url": "https://www.matt-staton.com"
+      }
+    ],
+  "copyrighttext": "  © Copyright Nexus Property Made with  by <a href='https://codingeek.net/' target='_blank'><i class=\"fa fa-heart\"></i><span>Codingeek.</span></a>",
+  "popularserces": {
+    "title": "Popular Searches",
+    "links": [
+      {
+        "title": "Apartment for Rent",
+        "url": "/property-details"
+      },
+      {
+        "title": "Apartment Low to hide",
+        "url": "/property-details"
+      },
+      {
+        "title": "Offices for Buy",
+        "url": "/property-details"
+      },
+      {
+        "title": "Offices for Rent",
+        "url": "/property-details"
+      }
+    ]
+  },
+  "Homepress": {
+    "title": "Homepress Markets",
+    "links": [
+      {
+        "title": "Los Angeles Offices",
+         "url": "/property-details"
+      },
+      {
+        "title": "Las Vegas Apartment",
+         "url": "/property-details"
+      },
+      {
+        "title": "Sacramento Townhome",
+         "url": "/property-details"
+      },
+      {
+        "title": "San Francisco Offices",
+         "url": "/property-details"
+      }
+    ]
+  },
+  "quicklink": {
+    "title": "Quick Links",
+    "links": [
+      {
+        "title": "Pricing Plans",
+        "url": "/pricing"
+      },
+      {
+        "title": "FAQ",
+        "url": "/faq"
+      },
+      {
+        "title": "About Us",
+        "url": "/About"
+      },
+      {
+        "title": "Contact Us",
+        "url": "/contact"
+      }
+    ]
+  }
+
+
+}

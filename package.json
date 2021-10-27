@@ -6,13 +6,21 @@
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "^4.10.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
     "jquery": "^3.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
     "react-map-gl": "^5.2.7",
     "react-map-gl-geocoder": "^2.1.2",
     "react-scripts": "3.4.1",
-    "yarn": "^1.22.10"
+    "yarn": "^1.22.10",
+    "wowjs": "^1.1.3",
+    "owl.carousel": "^2.3.4",
+    "google-maps-react": "^2.0.2",
+    "html-react-parser": "^0.10.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -36,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "bootstrap": "^5.1.3",
     "dotenv": "^8.2.0"
   }
 }

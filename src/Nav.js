@@ -66,14 +66,6 @@ export default function NavbarMenu() {
           <Button variant="outlined" className="buttonStyle">Login</Button>
     
         </Toolbar>
-
-        
-        <ButtonGroup variant="contained" color="white" aria-label="contained primary button group">
-          <h5 className="label">Bedrooms</h5>
-                    <Button>One</Button>
-                    <Button>Two</Button>
-                    <Button>Three</Button>
-        </ButtonGroup>
         
     </AppBar>
   </div>
