@@ -15,6 +15,9 @@ export default function Index() {
                         <Switch>
                           <Route exact path="/">
                               <Home_V1 />
+                              <div style={{height: '200vh'}} className="bg-light">
+
+                              </div>
                           </Route>
                           <Route path="/discover">
                             <Discover />

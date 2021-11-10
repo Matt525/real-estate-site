@@ -1,6 +1,7 @@
 import React, { useRef, useCallback, useEffect, useState } from 'react'
 import ReactMapGL, {GeolocateControl} from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
+import Navbar from './global-components/navbar';
 import "./MapStyling.css";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
@@ -61,6 +62,7 @@ import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
        
         return (
             <div className="mapStyles">
+                <Navbar />
                 <ReactMapGL
                 ref={mapRef}
                 {...viewport} 
@@ -68,6 +70,7 @@ import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
                 mapboxApiAccessToken="pk.eyJ1IjoibWF0dDUyNSIsImEiOiJja2RxOW4wMXAwbnpxMnpwNmprdXRuaXJlIn0.LfijiNZJZmZeRL7LSREYvg"
                 onViewportChange={handleViewportChange}
                 >
+                    
                                 <Geocoder
                                         id="geolocateStyles"
                                         mapRef={mapRef} 

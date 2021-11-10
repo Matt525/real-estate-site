@@ -1,6 +1,9 @@
 import React from 'react'
 import './Home.css';
 import Property from './Property';
+
+
+
 import './App.css';
 
 
@@ -60,12 +63,12 @@ export default class Home extends React.Component {
                             <div className="container" style={{width: '500px', minHeight: '100%'}}>
 
                                 
-                                {this.state && dataLoaded ?
+                                {dataLoaded ?
                                     <Property 
                                         housingData={this.state.housingData}
                                     />
                                     :   <div class="spinner-border text-primary" role="status">
-                                                <span class="sr-only">Loading...</span>
+                                                  <span class="visually-hidden">Loading...</span>
                                         </div>}
                                     
                             </div>
