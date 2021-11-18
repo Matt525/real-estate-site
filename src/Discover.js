@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Home from './Home'
 import Map from './Map';
-import Navbar from './global-components/navbar'
+import Navbar from './global-components/navbar.js';
 
 export default function Discover() {
     return (
