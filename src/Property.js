@@ -76,74 +76,74 @@ export default function Property(props){
 
             // Card info with data from props array //
     
-    // const propertyInfo = propData.slice(0,showItems).map((propData,item)=>(
+    const propertyInfo = propData.slice(0,showItems).map((propData,item)=>(
 
-    //                     <Card className={classes.root} key={item} onClick={()=>{
-    //                     // Set map coordinates to location of clicked card
-    //                 }}>
+                        <Card className={classes.root} key={item} onClick={()=>{
+                        // Set map coordinates to location of clicked card
+                    }}>
                         
-    //                     <CardActionArea>
-    //                             <CardMedia
-    //                                         component="img"
-    //                                         alt="Contemplative Reptile"
-    //                                         height="140"
-    //                                         image={propData.photos[item].href}
-    //                                         title="Contemplative Reptile"
-    //                             />
-    //                                     <CardContent>
-    //                                         <Typography gutterBottom variant="h5" component="h2">
-    //                                                 <p>{propData.address.line}</p>
-    //                                         </Typography>
-    //                                         <Typography variant="body2" color="textSecondary" component="p">
-    //                                                 <h1>${propData.community.price_max}<strong>/Month</strong></h1> {propData.community.beds_max}<strong>BR</strong> || {propData.community.sqft_max} <strong>sqft</strong>
-    //                                         </Typography>
-    //                                     </CardContent>
-    //                     </CardActionArea>
+                        <CardActionArea>
+                                <CardMedia
+                                            component="img"
+                                            alt="Contemplative Reptile"
+                                            height="140"
+                                            image={propData.photos[item].href}
+                                            title="Contemplative Reptile"
+                                />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component="h2">
+                                                    <p>{propData.address.line}</p>
+                                            </Typography>
+                                            <Typography variant="body2" color="textSecondary" component="p">
+                                                    <h1>${propData.community.price_max}<strong>/Month</strong></h1> {propData.community.beds_max}<strong>BR</strong> || {propData.community.sqft_max} <strong>sqft</strong>
+                                            </Typography>
+                                        </CardContent>
+                        </CardActionArea>
 
 
-    //                                     <CardActions>
+                                        <CardActions>
 
-    //                                                         {/* If(favoriteArray.includes(item) || activeFavorite === item){
-    //                                                             document.getElementById('icon').classList.toggle('animateFavorite')
-    //                                                         } else{ 
-    //                                                             document.getElementById('icon').classList.toggle('');
-    //                                                         }*/}
+                                                            {/* If(favoriteArray.includes(item) || activeFavorite === item){
+                                                                document.getElementById('icon').classList.toggle('animateFavorite')
+                                                            } else{ 
+                                                                document.getElementById('icon').classList.toggle('');
+                                                            }*/}
                                                         
 
 
-    //                                                         {/* Favorite icon pushed to favoriteArray as state */}
+                                                            {/* Favorite icon pushed to favoriteArray as state */}
 
-    //                                     <FavoriteIcon id="icon" onClick={() =>{
-    //                                                         setFavorite(activeFavorite = item);
-    //                                                         setArray(favoriteArray => [...favoriteArray, activeFavorite])
-    //                                                 }
-    //                                                         } 
-    //                                                         // Conditional rendering for className using the turnary operator. 
-    //                                                         className={`${favoriteArray.includes(item) || activeFavorite === item ? "animateFavorite" : ""}`} style={{cursor: 'pointer'}}
+                                        <FavoriteIcon id="icon" onClick={() =>{
+                                                            setFavorite(activeFavorite = item);
+                                                            setArray(favoriteArray => [...favoriteArray, activeFavorite])
+                                                    }
+                                                            } 
+                                                            // Conditional rendering for className using the turnary operator. 
+                                                            className={`${favoriteArray.includes(item) || activeFavorite === item ? "animateFavorite" : ""}`} style={{cursor: 'pointer'}}
                                         
-    //                                     />
-    //                                                         <ul><li style={{color: 'purple'}}>{propData.prop_status.toUpperCase()}</li></ul>
+                                        />
+                                                            <ul><li style={{color: 'purple'}}>{propData.prop_status.toUpperCase()}</li></ul>
 
-    //                                                         <Button onClick={handleShowItems} variant="outlined" size="small" color="primary" className={classes.button}>
-    //                                                                 Learn More
-    //                                                         </Button>
-    //                                     </CardActions>
-    //                 </Card>
-    // ))
+                                                            <Button onClick={handleShowItems} variant="outlined" size="small" color="primary" className={classes.button}>
+                                                                    Learn More
+                                                            </Button>
+                                        </CardActions>
+                    </Card>
+    ))
 
 
                                         // BOOTSTRAP CARD 
 
-                                const propertyInfo = () =>(        
+                                // const propertyInfo = () =>(        
                                 
-                                        <div className="card">
-                                                    <img class="card-img-top" src="..." alt="Card image cap" />
-                                                    <div class="card-body">
-                                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                    </div>
-                                        </div>
+                                //         <div className="card">
+                                //                     <img class="card-img-top" src="..." alt="Card image cap" />
+                                //                     <div class="card-body">
+                                //                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                //                     </div>
+                                //         </div>
 
-                                )
+                                // )
                     
                                     /// Rendering Card Component 
 
