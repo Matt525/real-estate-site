@@ -12,7 +12,7 @@ const Home_V1 =()=> {
                     <>
                         <Navbar />
                         <Home_search />
-                        <Navbar />
+                        <About />
 
                     </>
      );
