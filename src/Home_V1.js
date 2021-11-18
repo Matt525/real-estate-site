@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from './global-components/navbar.js';
 import Home_search from './section-components/Home_search';
-import About from './About';
+import About from './About.js';
+
 
 
 
@@ -11,7 +12,7 @@ const Home_V =()=> {
                     <>
                         <Navbar />
                         <Home_search />
-                        <About />      
+                        <About />
                     </>
      );
 }
