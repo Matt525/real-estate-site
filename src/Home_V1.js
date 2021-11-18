@@ -6,7 +6,7 @@ import About from './About.js';
 
 
 
-const Home_V =()=> {
+const Home_V1 =()=> {
 
          return (
                     <>
@@ -17,5 +17,5 @@ const Home_V =()=> {
      );
 }
 
-export default Home_V
+export default Home_V1
 
