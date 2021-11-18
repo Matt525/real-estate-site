@@ -1,7 +1,7 @@
 import React from 'react';
-import About from './About.js';
 import Navbar from './global-components/navbar.js';
 import Home_search from './section-components/Home_search';
+import About from '../src/about.js';
 
 
 
