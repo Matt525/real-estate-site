@@ -22,29 +22,33 @@ export default class Home extends React.Component {
 
     componentDidMount() { 
 
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://realtor.p.rapidapi.com/properties/v2/list-for-rent?city=New%20York%20City&state_code=NY&limit=200&offset=0&sort=relevance",
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "realtor.p.rapidapi.com",
-                "x-rapidapi-key": "f76ca2b1c4msh33c4abca334d588p16879ajsn952b22a139fd",
-                "useQueryString": true
-            }
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://realtor.p.rapidapi.com/properties/v2/list-for-rent?city=New%20York%20City&state_code=NY&limit=200&offset=0&sort=relevance",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "realtor.p.rapidapi.com",
+            "x-rapidapi-key": "f76ca2b1c4msh33c4abca334d588p16879ajsn952b22a139fd",
+            "useQueryString": true
         }
-        
-        $.ajax(settings).done(response=>{
-            let dataArray = [];
-            for(let i = 0; i < response.properties.length; i++){
-                let obj = {};
-                obj = {...response.properties[i]}
-                dataArray.push(obj);
-            }
-            this.setState({housingData: dataArray});
-        });
+    }
 
-            }
+    $.ajax(settings)
+    .done(response=>{
+        let dataArray = [];
+        for(let i = 0; i < response.properties.length; i++){
+            let obj = {};
+            obj = {...response.properties[i]}
+            dataArray.push(obj);
+        }
+        this.setState({housingData: dataArray});
+    })
+    .fail((error) => {
+        console.error('Error with API call:', error);
+        this.setState({error: true})
+    });
+}
         
 
 // response.properties
